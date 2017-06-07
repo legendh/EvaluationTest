@@ -1,0 +1,16 @@
+{
+  "name": "hrn",
+  "authors": [
+    "legendh <h_ergoksen@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "index.html",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "normalize-css": "^7.0.0",
+    "gsap": "^1.19.1"
+  }
+}

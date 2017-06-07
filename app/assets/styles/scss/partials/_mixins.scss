@@ -1,0 +1,116 @@
+@mixin extra-small-device(){
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin small-device(){
+  @media only screen and (max-width: 1024px){
+    @content;
+  }
+}
+
+
+
+@mixin large-device(){
+  @media only screen and (max-width: 1279px){
+    @content;
+  }
+}
+
+@mixin extra-large-device(){
+  @media only screen and (min-width: 1921px ){
+    @content;
+  }
+}
+
+@mixin ie-fixed(){
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  @content;
+  }
+}
+
+@mixin no-select(){
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@mixin event-info(){
+  .menu-event-section{
+
+    line-height: 10px;
+    @include extra-large-device{
+      line-height: 0.52vw;
+    }
+    .event-info{
+      font-size: 8px;
+      @include extra-large-device{
+        line-height: 0.42vw;
+      }
+      .event-info-location--san-francisco{color:#E80F42}
+      .event-info-location--amsterdam{color:#00A8E2}
+    }
+
+
+
+
+
+  }
+}
+
+@mixin center{
+  position: absolute;
+  top:0;right:0;bottom:0;left:0;
+  margin: auto;
+}
+
+@mixin add-icon-navbar-item($itemName,$itemColor, $itemColor-2:#d1d1d1){
+
+  #future-work-page{
+    #content-#{$itemName}{
+      h3{ color: $itemColor;}
+      .button-group{
+        .button{
+          color:$itemColor;
+          border:1px solid $itemColor;
+          background: #FFF;
+          transition: all 0.2s;
+          &:hover{
+            color:#FFF;
+            transition: all 0.4s;
+            border:1px solid $itemColor;
+            background: $itemColor;
+          }
+
+        }
+      }
+    }
+  }
+  #future-work-page ul{
+
+    li##{$itemName}{
+      transition: all 0.6s;
+      .bg-color{fill:#d1d1d1;}
+      .bg-color-2{fill:#d1d1d1;}
+    }
+    li##{$itemName}:hover{
+      transition: all 0.3s;
+      transform: scale(1.5);
+      .bg-color{fill:$itemColor;}
+      .bg-color-2{fill:$itemColor-2;}
+  }
+
+    li.selected-#{$itemName}{
+      transition: all 0.3s;
+      transform: scale(1.5);
+      .bg-color{fill:$itemColor!important;}
+    }
+
+
+
+  }
+
+}
